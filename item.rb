@@ -1,3 +1,4 @@
+#item.rb
 require 'date'  # Require the Date class
 
 class Item
@@ -15,6 +16,8 @@ class Item
   end
 
   def can_be_archived?
+    return false if @publish_date.nil?
+
     if (Date.today - @publish_date.to_date).to_i > 3650  # Convert Time to Date and calculate the difference in days
       return true
     end
@@ -25,5 +28,8 @@ class Item
     if can_be_archived?
       @archived = true
     end
+  end
+  def label=(label)
+    @label = label
   end
 end
