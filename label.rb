@@ -13,11 +13,9 @@ class Label
 
   def add_item(item)
     @items << item
-    item.label = self  # Add self as a property of the item object
   end
 
   def remove_item(item)
     @items.delete(item)
-    item.label = nil  # Remove self as a property of the item object
   end
 end
